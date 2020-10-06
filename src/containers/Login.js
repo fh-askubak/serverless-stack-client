@@ -9,8 +9,6 @@ import { onError } from '../libs/errorLib';
 import { useFormFields } from '../libs/hooksLib';
 
 export default () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const { userHasAuthenticated } = useUserContext();
   const history = useHistory();
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +18,7 @@ export default () => {
   });
 
   const validateForm = () => {
-    return email.length > 0 && password.length > 0;
+    return fields.email.length > 0 && fields.password.length > 0;
   }
 
   const handleSubmit = async event => {
@@ -28,7 +26,7 @@ export default () => {
     setIsLoading(true);
 
     try {
-      await Auth.signIn(email, password);
+      await Auth.signIn(fields.email, fields.password);
       userHasAuthenticated(true);
       history.push("/");
     } catch (err) {
@@ -45,14 +43,14 @@ export default () => {
           <FormControl
             autoFocus
             type="email"
-            value={email}
+            value={fields.email}
             onChange={handleFieldChange}
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
           <ControlLabel>Password</ControlLabel>
           <FormControl
-            value={password}
+            value={fields.password}
             onChange={handleFieldChange}
             type="password"
           />

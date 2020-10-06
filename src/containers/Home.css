@@ -29,3 +29,47 @@
     color: rgb(95,210,241);
   }
 }
+
+@media all and (min-width: 480px) {
+  .Signup {
+    color:rgb(95,210,241);
+    padding: 60px 0;
+  }
+
+  .Signup form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}
+
+.Signup form span.help-block {
+  font-size: 14px;
+  padding-bottom: 10px;
+  color:rgb(95,210,241);
+}
+
+.NewNote form {
+  color: rgb(95,210,241);
+  padding-bottom: 15px;
+}
+
+.NewNote form textarea {
+  height: 300px;
+  font-size: 24px;
+}
+
+.Home .notes .page-header {
+  color:rgb(95,210,241);
+}
+
+.Home .notes h4 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  line-height: 1.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.Home .notes p {
+  color:rgb(126, 174, 225);
+}

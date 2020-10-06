@@ -5,7 +5,7 @@ export const useFormFields = init => {
 
   return [
     fields,
-    (event) => {
+    function(event) {
       setValues({
         ...fields,
         [event.target.id]: event.target.value
