@@ -5,12 +5,13 @@ export default () => {
   const [text, setText] = useState('');
 
   const handleSubmit = event => {
+    event.preventDefault();
     const { value } = event.target;
     alert('encrypt the text: ', value);
   }
   return (
     <>
-    <form>
+    <form onSubmit={handleSubmit}>
       <FormGroup controlId="encrypt" bsSize="large">
         <ControlLabel>Encrypt my Text!</ControlLabel>
         <FormControl
